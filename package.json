@@ -1,0 +1,22 @@
+{
+  "name": "hapi16",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fast-xml-parser": "^3.12.5",
+    "hapi": "^16.0.1",
+    "he": "^1.2.0",
+    "joi": "^13.7.0",
+    "md5": "^2.2.1",
+    "mkdirp": "^0.5.1",
+    "uuid": "^3.3.2",
+    "xlsx": "^0.14.0",
+    "xmlbuilder": "^10.1.0"
+  }
+}
