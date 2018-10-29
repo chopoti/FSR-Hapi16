@@ -59,7 +59,7 @@ server.route({
     path: '/forms/submission',
     config: {
         handler: function (request, reply) {
-            if(!request.headers.authorization){
+            if(!request.headers.Authorization){
                 console.log('No Auth ' + JSON.stringify(request.headers));
                  reply('formReceivedReply')
                      .header("HTTP/1.1 401 Unauthorized")
@@ -69,7 +69,7 @@ server.route({
                      .code(401);
             }
 
-            else if(request.headers.authorization){
+            else if(request.headers.Authorization){
                 console.log('With Auth ' + JSON.stringify(request.headers));
                  reply('formReceivedReply').header('Content-Type', 'text/xml').header('X-OpenRosa-Version','1.0').code(202);
             }
