@@ -63,10 +63,10 @@ server.route({
                 console.log('No Auth ' + JSON.stringify(request.headers));
                  reply('formReceivedReply')
                      .header("HTTP/1.1 401 Unauthorized")
-                     .header('Content-Type: text/xml; charset=utf-8')
-                     .header('WWW-Authenticate: Digest realm="Digest Authenticatoin",qop="auth",nonce="' + uuidv1() +'",opaque="' + md5('Digest Authenticatoin') + '"')
-                     .header('X-OpenRosa-Version','1.0')
-                     .code(204);
+                     .header("Content-Type: text/xml; charset=utf-8")
+                     .header("WWW-Authenticate: Digest realm=Digest Authenticatoin",qop="auth",nonce=uuidv1() +",opaque=" + md5("Digest Authenticatoin"))
+                     .header("X-OpenRosa-Version","1.0")
+                     .code(401);
             }
 
             else if(request.headers.Authorization){
