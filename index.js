@@ -66,7 +66,7 @@ server.route({
                      .header('Content-Type: text/xml; charset=utf-8')
                      .header('WWW-Authenticate: Digest realm="Digest Authenticatoin",qop="auth",nonce="' + uuidv1() +'",opaque="' + md5('Digest Authenticatoin') + '"')
                      .header('X-OpenRosa-Version','1.0')
-                     .code(401);
+                     .code(204);
             }
 
             else if(request.headers.Authorization){
