@@ -62,9 +62,10 @@ server.route({
             if(!request.headers.authorization){
                 console.log('No Auth ' + JSON.stringify(request.headers));
                  reply('formReceivedReply')
-                     .header('Content-Type', 'text/xml')
                      .header('X-OpenRosa-Version','1.0')
-                     .code(204);
+                     .header('Content-Type', 'text/xml')
+                     .header('WWW-Authenticate','Basic realm="myRealm"')
+                     .code(401);
             }
 
             else if(request.headers.authorization){
