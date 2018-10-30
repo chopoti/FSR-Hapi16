@@ -59,15 +59,15 @@ server.route({
     path: '/forms/submission',
     config: {
         handler: function (request, reply) {
-            if(!request.headers.Authorization){
+            if(!request.headers.authorization){
                 console.log('No Auth ' + JSON.stringify(request.headers));
                  reply('formReceivedReply')
-                     .header("Content-Type: text/xml", "charset=utf-8")
-                     .header("X-OpenRosa-Version","1.0")
-                     .code(401);
+                     .header('Content-Type', 'text/xml')
+                     .header('X-OpenRosa-Version','1.0')
+                     .code(204);
             }
 
-            else if(request.headers.Authorization){
+            else if(request.headers.authorization){
                 console.log('With Auth ' + JSON.stringify(request.headers));
                  reply('formReceivedReply').header('Content-Type', 'text/xml').header('X-OpenRosa-Version','1.0').code(202);
             }
