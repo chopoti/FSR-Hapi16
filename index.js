@@ -64,7 +64,7 @@ server.route({
                  reply('formReceivedReply')
                      .header('X-OpenRosa-Version','1.0')
                      .header('Content-Type', 'text/xml')
-                     .header('WWW-Authenticate','Basic realm="myRealm"')
+                     .header('WWW-Authenticate',' Digest realm="frs.go.tz",qop="auth",nonce="' + uniqid()+ '",opaque="'+ md5('fsr.go.tz') + '"')
                      .code(401);
             }
 
