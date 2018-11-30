@@ -14,11 +14,15 @@ const tls = {
     key: fs.readFileSync('./certificates/server-key.pem'),
     cert: fs.readFileSync('./certificates/server-cert.pem')
 };
+//for herouku and local
+    // host: '0.0.0.0',
+    // port: ~~process.env.PORT || 3000
 
 const server = new Hapi.Server();
 server.connection({
-    host: '0.0.0.0',
-    port: ~~process.env.PORT || 3000
+    //for OpenShif and Local
+    host: process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
+    port: process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080
 });
 
 
